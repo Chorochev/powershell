@@ -46,7 +46,7 @@ begin {
     [int]$count_error = 0
     # The temples for regular
     [string]$temlpe_ip = "^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"     
-    [string]$temlpe_network_mask = "\b([1-9]|1[1-9]|2[1-9]|3[1-2])\b"
+    [string]$temlpe_network_mask = "\b([1-9]|1[0-9]|2[0-9]|3[0-2])\b"
 
     # chech 1
     $result1 = $ip_address_1 -match $temlpe_ip        
