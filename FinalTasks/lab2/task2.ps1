@@ -19,16 +19,13 @@
 Param
 (
     [parameter(Position = 0, Mandatory = $true)]
-    [String]
+    [ValidateScript({ Test-Path -Path $_ }, ErrorMessage = "Wrong path.")]
+    [String]    
     $path
 ) 
 
 begin {
-    # Checking path
-    $check = Test-Path -Path $path
-    if ($check -eq $false) {
-        Write-Host "ERROR: Wrong path." -ForegroundColor Red       
-    }   
+    
 }
 
 process {    
@@ -63,3 +60,8 @@ process {
     # Creating new file
     $accounts | Export-Csv -UseQuotes AsNeeded -Path .\accounts_new.csv    
 }
+
+end {
+    
+}
+
